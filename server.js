@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from "dotenv";
 import morgan from 'morgan'
 import colors from 'colors'
-import connectDB from './config/db.js'
+import connectDB from './backend/config/db.js'
 import userRoute from './backend/routes/userRoute.js'
 import companyRoute from './backend/routes/companyRoute.js'
 
@@ -26,10 +26,8 @@ app.use('/api/users',userRoute)
 
 app.use('/api/companies',companyRoute) 
 
-app.use(express.static(path.join(__dirname, '../build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build'))
-})
+
+
 
   // 🔥  ✔️  🚀
  
