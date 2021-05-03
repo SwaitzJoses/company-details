@@ -20,9 +20,10 @@
   },
   "scripts": {
     "start": "node server.js", 
-    "server": "nodemon backend/server",
+    "server": "nodemon server.js",
     "client": "npm start --prefix companies",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix companies && npm run build --prefix companies"
    
   },
   "author": "R.Swaitzer Joses",
