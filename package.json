@@ -22,7 +22,9 @@
     "start": "node server.js",
     "server": "nodemon backend/server",
     "client": "npm start --prefix companies",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build",
+    "build": "react-scripts build"
   },
   "author": "R.Swaitzer Joses",
   "license": "ISC"

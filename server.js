@@ -26,6 +26,11 @@ app.use('/api/users',userRoute)
 
 app.use('/api/companies',companyRoute) 
 
+app.use(express.static(path.join(__dirname, '../build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build'))
+})
+
   // 🔥  ✔️  🚀
  
 const PORT=process.env.PORT || 5000
